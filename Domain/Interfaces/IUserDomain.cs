@@ -14,5 +14,6 @@ namespace Domain.Interfaces
         Task<bool> DeleteUser(int id);
         Task<User?> GetUserById(int id);
         Task<User?> GetUserLogin(string email, string password);
+        Task<List<Pet>> GetPetsByUserId(int id);
     }
 }

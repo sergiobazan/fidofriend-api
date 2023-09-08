@@ -12,5 +12,6 @@
         public string Address { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public string ImgUrl { get; set; } = string.Empty;
+        public ICollection<Pet> Pets { get; } = new List<Pet>();
     }
 }

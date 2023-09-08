@@ -1,4 +1,6 @@
-﻿namespace API.Dtos.Response
+﻿using Infrastructure.Models;
+
+namespace API.Dtos.Response
 {
     public class UserResponseDto
     {
@@ -11,5 +13,6 @@
         public string Address { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public string ImgUrl { get; set; } = string.Empty;
+        public ICollection<Pet> Pets { get; set; } = new List<Pet>();
     }
 }

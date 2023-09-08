@@ -27,6 +27,11 @@ namespace Domain
             return await _userInfrastructure.DeleteUser(id);
         }
 
+        public async Task<List<Pet>> GetPetsByUserId(int id)
+        {
+            return await _userInfrastructure.GetPets(id);
+        }
+
         public async Task<User?> GetUserById(int id)
         {
             return await _userInfrastructure.GetUserById(id);

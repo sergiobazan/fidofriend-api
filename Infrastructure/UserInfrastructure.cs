@@ -49,6 +49,11 @@ namespace Infrastructure
             }
         }
 
+        public async Task<List<Pet>> GetPets(int id)
+        {
+            return await _context.Pets.Where(e => e.OwnerId == id).ToListAsync();
+        }
+
         public async Task<User?> GetUserById(int id)
         {
             return await _context.Users.FindAsync(id);

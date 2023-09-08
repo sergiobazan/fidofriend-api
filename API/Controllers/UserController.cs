@@ -63,5 +63,13 @@ namespace API.Controllers
             var result = _mapper.Map<User, UserResponseDto>(userFound);
             return Ok(result);
         }
+
+        [HttpGet("{id}/pets")]
+        public async Task<IActionResult> GetPets(int id)
+        {
+            var pets = await _userDomain.GetPetsByUserId(id);
+            var result = _mapper.Map<List<Pet>, List<PetResponseDto>>(pets);
+            return Ok(result);
+        }
     }
 }

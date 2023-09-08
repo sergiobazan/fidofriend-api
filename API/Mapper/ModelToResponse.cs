@@ -9,6 +9,7 @@ namespace API.Mapper
         public ModelToResponse()
         {
             CreateMap<User, UserResponseDto>();
+            CreateMap<Pet, PetResponseDto>();
         }
     }
 }

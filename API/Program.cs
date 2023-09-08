@@ -18,6 +18,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUserInfrastructure, UserInfrastructure>();
 builder.Services.AddScoped<IUserDomain, UserDomain>();
 
+builder.Services.AddScoped<IPetInfrastructure, PetInfrastructure>();
+builder.Services.AddScoped<IPetDomain, PetDomain>();
+
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("FidoDbConnection"));
