@@ -15,6 +15,8 @@ namespace Infrastructure.Context
 
         public virtual DbSet<Service> Services { get; set; }
 
+        public virtual DbSet<ServiceVet> ServicesVet { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

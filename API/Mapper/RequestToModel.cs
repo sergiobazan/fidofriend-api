@@ -14,6 +14,7 @@ namespace API.Mapper
             CreateMap<PetCreateDto, Pet>();
             CreateMap<ClinicalRecordCreateDto, ClinicalRecord>();
             CreateMap<ServiceCreateDto, Service>();
+            CreateMap<ServiceVetCreateDto, ServiceVet>();
         }
     }
 }

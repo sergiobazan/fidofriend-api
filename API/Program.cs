@@ -27,6 +27,9 @@ builder.Services.AddScoped<IClinicalRecordDomain, ClinicalRecordDomain>();
 builder.Services.AddScoped<IServiceInfrastructure, ServiceInfrastructure>();
 builder.Services.AddScoped<IServiceDomain, ServiceDomain>();
 
+builder.Services.AddScoped<IServiceVetInfrastructure, ServiceVetInfrastructure>();
+builder.Services.AddScoped<IServiceVetDomain, ServiceVetDomain>();
+
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("FidoDbConnection"));
