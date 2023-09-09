@@ -51,7 +51,7 @@ namespace Infrastructure
 
         public async Task<Pet?> GetPetById(int id)
         {
-            return await _context.Pets.FindAsync(id);
+            return await _context.Pets.Include(e => e.ClinicalRecords).FirstOrDefaultAsync(e => e.Id == id);
         }
 
         public async Task<bool> UpdatePet(Pet pet)

@@ -10,5 +10,6 @@ namespace API.Dtos.Response
         public string Description { get; set; } = string.Empty;
         public string ImgUrl { get; set; } = string.Empty;
         public string Sex { get; set; } = string.Empty;
+        public ICollection<ClinicalRecord> ClinicalRecords { get; set; } = new List<ClinicalRecord>();
     }
 }

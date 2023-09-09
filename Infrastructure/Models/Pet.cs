@@ -16,5 +16,7 @@ namespace Infrastructure.Models
         public string Sex { get; set; } = string.Empty;
         public int OwnerId { get; set; }
         public User Owner { get; set; } = null!;
+
+        public ICollection<ClinicalRecord> ClinicalRecords { get; set; } = new List<ClinicalRecord>();
     }
 }

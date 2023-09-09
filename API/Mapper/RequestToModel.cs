@@ -1,4 +1,5 @@
 ﻿using API.Dtos.Request;
+using API.Dtos.Response;
 using AutoMapper;
 using Infrastructure.Models;
 
@@ -11,6 +12,7 @@ namespace API.Mapper
             CreateMap<UserCreateDto, User>();
             CreateMap<UserUpdateDto, User>();
             CreateMap<PetCreateDto, Pet>();
+            CreateMap<ClinicalRecordCreateDto, ClinicalRecord>();
         }
     }
 }

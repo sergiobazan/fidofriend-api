@@ -11,6 +11,8 @@ namespace Infrastructure.Context
 
         public virtual DbSet<Pet> Pets { get; set; }
 
+        public virtual DbSet<ClinicalRecord> ClinicalRecords { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -19,6 +21,12 @@ namespace Infrastructure.Context
                 .HasMany(e => e.Pets)
                 .WithOne(e => e.Owner)
                 .HasForeignKey(e => e.OwnerId)
+                .IsRequired();
+
+            modelBuilder.Entity<Pet>()
+                .HasMany(e => e.ClinicalRecords)
+                .WithOne(e => e.Pet)
+                .HasForeignKey(e => e.PetId)
                 .IsRequired();
         }
     }
