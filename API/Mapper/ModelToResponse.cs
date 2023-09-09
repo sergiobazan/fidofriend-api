@@ -13,6 +13,7 @@ namespace API.Mapper
             CreateMap<ClinicalRecord, ClinicalRecordResponseDto>();
             CreateMap<Service, ServiceResponseDto>();
             CreateMap<ServiceVet, ServiceVetResponseDto>();
+            CreateMap<Meeting, MeetingResponseDto>();
         }
     }
 }
