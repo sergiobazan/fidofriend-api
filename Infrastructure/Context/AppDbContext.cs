@@ -13,6 +13,8 @@ namespace Infrastructure.Context
 
         public virtual DbSet<ClinicalRecord> ClinicalRecords { get; set; }
 
+        public virtual DbSet<Service> Services { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
