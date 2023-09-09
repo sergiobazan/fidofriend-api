@@ -33,6 +33,9 @@ builder.Services.AddScoped<IServiceVetDomain, ServiceVetDomain>();
 builder.Services.AddScoped<IMeetingInfrastructure, MeetingInfrastructure>();
 builder.Services.AddScoped<IMeetingDomain, MeetingDomain>();
 
+builder.Services.AddScoped<IProductInfrastructure, ProductInfrastructure>();
+builder.Services.AddScoped<IProductDomain, ProductDomain>();
+
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("FidoDbConnection"));

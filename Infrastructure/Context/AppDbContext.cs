@@ -19,6 +19,8 @@ namespace Infrastructure.Context
 
         public virtual DbSet<Meeting> Meetings { get; set; }
 
+        public virtual DbSet<Product> Products { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
