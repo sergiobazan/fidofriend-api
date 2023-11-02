@@ -11,6 +11,7 @@ namespace Domain.Interfaces
     {
         Task<bool> CreateProduct(Product product);
         Task<bool> DeleteProduct(int id);
+        Task<bool> UpdateProduct(int id, Product product);
         Task<Product?> GetProductById(int id);
         Task<List<Product>> GetAllProducts();
     }

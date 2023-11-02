@@ -38,11 +38,11 @@ namespace API.Controllers
             return CreatedAtAction(nameof(GetById), new { id = result.Id }, result);
         }
 
-        [HttpPut]
-        public async Task<IActionResult> Update(UserUpdateDto userUpdate)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, UserUpdateDto userUpdate)
         {
             var result = _mapper.Map<UserUpdateDto, User>(userUpdate);
-            var isUpdated = await _userDomain.UpdateUser(result);
+            var isUpdated = await _userDomain.UpdateUser(id, result);
             if (!isUpdated) return BadRequest();
             return NoContent();
         }

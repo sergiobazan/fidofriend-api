@@ -36,5 +36,10 @@ namespace Domain
         {
             return await _infrastructure.GetProductById(id);
         }
+
+        public async Task<bool> UpdateProduct(int id, Product product)
+        {
+           return await _infrastructure.UpdatedProduct(id, product);
+        }
     }
 }

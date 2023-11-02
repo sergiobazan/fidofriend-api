@@ -57,5 +57,19 @@ namespace Infrastructure
         {
             return await _context.Products.FindAsync(id);
         }
+
+        public async Task<bool> UpdatedProduct(int id, Product product)
+        {
+            var productFound = await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
+            if (productFound == null) return false;
+
+            productFound.Name = product.Name;
+            productFound.Description = product.Description;
+            productFound.ImgUrl = product.ImgUrl;
+            productFound.Price = product.Price;
+            _context.Products.Update(productFound);
+            await _context.SaveChangesAsync();
+            return true;
+        }
     }
 }

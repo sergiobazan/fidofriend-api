@@ -1,6 +1,7 @@
 ﻿using API.Dtos.Request;
 using API.Dtos.Response;
 using AutoMapper;
+using Domain;
 using Domain.Interfaces;
 using Infrastructure.Models;
 using Microsoft.AspNetCore.Http;
@@ -36,6 +37,24 @@ namespace API.Controllers
             if (service == null) return NotFound();
             var result = _mapper.Map<Product, ProductResponseDto>(service);
             return Ok(result);
+        }
+
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var isDeleted = await _domain.DeleteProduct(id);
+            if (!isDeleted) return NotFound();
+            return NoContent();
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, ProductCreateDto productUpdate)
+        {
+            var result = _mapper.Map<ProductCreateDto, Product>(productUpdate);
+            var isUpdated = await _domain.UpdateProduct(id, result);
+            if (!isUpdated) return BadRequest();
+            return NoContent();
         }
 
         [HttpPost]

@@ -64,9 +64,9 @@ namespace Infrastructure
             return await _context.Users.FirstOrDefaultAsync(x => x.Email == email && x.Password == password);
         }
 
-        public async Task<bool> UpdateUser(User user)
+        public async Task<bool> UpdateUser(int id, User user)
         {
-            var userFound = await _context.Users.FirstOrDefaultAsync(x => x.Id == user.Id);
+            var userFound = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
             if (userFound == null) return false;
 
             userFound.FirstName = user.FirstName;
