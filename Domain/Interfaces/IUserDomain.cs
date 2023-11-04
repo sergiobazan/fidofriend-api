@@ -15,5 +15,6 @@ namespace Domain.Interfaces
         Task<User?> GetUserById(int id);
         Task<User?> GetUserLogin(string email, string password);
         Task<List<Pet>> GetPetsByUserId(int id);
+        Task<List<User>> GetUsersVets();
     }
 }

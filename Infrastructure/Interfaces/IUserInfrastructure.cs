@@ -15,5 +15,6 @@ namespace Infrastructure.Interfaces
         Task<User?> GetUserById(int id);
         Task<User?> GetUserLogin(string email, string password);
         Task<List<Pet>> GetPets(int id);
+        Task<List<User>> GetUsersVets();
     }
 }

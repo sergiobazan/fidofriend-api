@@ -42,6 +42,11 @@ namespace Domain
             return await _userInfrastructure.GetUserLogin(email, password);
         }
 
+        public async Task<List<User>> GetUsersVets()
+        {
+            return await _userInfrastructure.GetUsersVets();
+        }
+
         public async Task<bool> UpdateUser(int id, User user)
         {
             return await _userInfrastructure.UpdateUser(id, user);

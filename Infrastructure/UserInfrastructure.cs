@@ -64,6 +64,11 @@ namespace Infrastructure
             return await _context.Users.FirstOrDefaultAsync(x => x.Email == email && x.Password == password);
         }
 
+        public async Task<List<User>> GetUsersVets()
+        {
+            return await _context.Users.Where(u => u.IsVet.Equals(true)).ToListAsync();
+        }
+
         public async Task<bool> UpdateUser(int id, User user)
         {
             var userFound = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);

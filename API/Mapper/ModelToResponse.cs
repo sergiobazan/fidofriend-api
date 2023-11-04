@@ -15,6 +15,7 @@ namespace API.Mapper
             CreateMap<ServiceVet, ServiceVetResponseDto>();
             CreateMap<Meeting, MeetingResponseDto>();
             CreateMap<Product, ProductResponseDto>();
+            CreateMap<User, VetsResponse>();
         }
     }
 }
