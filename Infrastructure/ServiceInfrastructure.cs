@@ -41,5 +41,19 @@ namespace Infrastructure
         {
             return await _context.Services.ToListAsync();
         }
+
+        public async Task<bool> UpdateService(int id, Service service)
+        {
+            var serviceFound = await _context.Services.FirstOrDefaultAsync(x => x.Id == id);
+            if (serviceFound == null) return false;
+
+            serviceFound.Name = service.Name;
+            serviceFound.Price = service.Price;
+            serviceFound.ImgUrl = service.ImgUrl;
+            serviceFound.Description = service.Description;
+            _context.Services.Update(serviceFound);
+            await _context.SaveChangesAsync();
+            return true;
+        }
     }
 }

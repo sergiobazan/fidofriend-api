@@ -31,5 +31,10 @@ namespace Domain
         {
             return await _serviceInfrastructure.GetServices();
         }
+
+        public async Task<bool> UpdateService(int id, Service user)
+        {
+            return await _serviceInfrastructure.UpdateService(id, user);
+        }
     }
 }

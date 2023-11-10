@@ -12,5 +12,6 @@ namespace Domain.Interfaces
         Task<bool> CreateService(Service service);
         Task<List<Service>> GetServices();
         Task<Service?> GetService(int id);
+        Task<bool> UpdateService(int id, Service user);
     }
 }

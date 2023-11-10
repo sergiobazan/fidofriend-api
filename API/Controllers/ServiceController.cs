@@ -1,6 +1,7 @@
 ﻿using API.Dtos.Request;
 using API.Dtos.Response;
 using AutoMapper;
+using Domain;
 using Domain.Interfaces;
 using Infrastructure.Models;
 using Microsoft.AspNetCore.Http;
@@ -45,6 +46,15 @@ namespace API.Controllers
             var isCreated = await _domain.CreateService(result);
             if (!isCreated) return BadRequest();
             return Ok(result);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, ServiceCreateDto serviceUpdate)
+        {
+            var result = _mapper.Map<ServiceCreateDto, Service>(serviceUpdate);
+            var isUpdated = await _domain.UpdateService(id, result);
+            if (!isUpdated) return BadRequest();
+            return NoContent();
         }
     }
 }
