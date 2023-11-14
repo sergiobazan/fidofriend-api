@@ -21,6 +21,14 @@ namespace API.Controllers
             _mapper = mapper;
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var meetings = await _domain.GetAllMeetings();
+            var result = _mapper.Map<IEnumerable<Meeting>, List<MeetingResponseDto>>(meetings);
+            return Ok(result);
+        }
+
         [HttpPost]
         public async Task<IActionResult> Post(MeetingCreateDto createDto)
         {

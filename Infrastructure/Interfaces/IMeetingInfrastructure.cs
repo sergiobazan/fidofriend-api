@@ -15,5 +15,6 @@ namespace Infrastructure.Interfaces
         Task<Meeting?> GetMeeting(int id);
         Task<IEnumerable<Meeting>> GetAllMeetingByClient(int id);
         Task<IEnumerable<Meeting>> GetAllMeetingByVet(int id);
+        Task<List<Meeting>> GetAllMeetings();
     }
 }

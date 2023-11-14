@@ -43,6 +43,11 @@ namespace Domain
             return await _infrastructure.GetAllMeetingByVet(id);
         }
 
+        public async Task<List<Meeting>> GetAllMeetings()
+        {
+            return await _infrastructure.GetAllMeetings();
+        }
+
         public async Task<Meeting?> GetMeeting(int id)
         {
             return await _infrastructure.GetMeeting(id);

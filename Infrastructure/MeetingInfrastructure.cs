@@ -68,6 +68,11 @@ namespace Infrastructure
             return await _context.Meetings.Where(e => e.VetId == id).ToListAsync();
         }
 
+        public async Task<List<Meeting>> GetAllMeetings()
+        {
+            return await _context.Meetings.ToListAsync();
+        }
+
         public async Task<Meeting?> GetMeeting(int id)
         {
             return await _context.Meetings.FindAsync(id);
